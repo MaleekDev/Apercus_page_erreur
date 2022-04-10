@@ -1,0 +1,17 @@
+@media screen and (max-width: 600px) {
+    .btn_page_error {
+        padding: 1.8em 1.7rem;
+        background: #7f4c4d;
+        border: none;
+        position: relative;
+        top: 2rem;
+        left: -9.2rem;
+    }
+    img {
+        position: relative;
+        left: 1em;
+        top: -3em;
+        width: clamp(14rem, 104%, 59rem);
+        object-fit: cover;
+    }
+}

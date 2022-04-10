@@ -1,0 +1,265 @@
+
+@import url('http://fonts.cdnfonts.com/css/sofia-pro');
+
+:root {
+    --principale: 'Sofia Pro', sans-serif;
+    --secondaire: 'roboto', sans-serif;
+
+    --xl: clamp(2.188rem, 2.188rem + 1vw, 3.75rem);
+    --m: clamp(0.9rem, 1vw, 1.25rem);
+    --s:  clamp(0.7rem, 1vw, 1.25rem);
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.container {
+    padding: min(1rem, 4rem);
+}
+
+section{
+    display: grid;
+    margin: auto;
+    padding-block: min(10rem, 5rem);
+    padding-inline: min(2rem, 5rem);
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: absolute;
+}
+
+.erreur_titre_1 {
+    font-size: var(--xl);
+    font-family: var(--principale);
+    width: min(7em, 8em);
+    color: #222d3b;
+    grid: 2 / 5;
+    margin-bottom: 1em;
+}
+
+.erreur_text_2 {
+    font-size: var(--m);
+    font-family: var(--secondaire);
+    font-weight: 600;
+    width: min(12em, 13em);
+}
+
+.erreur_text_3 {
+    font-size: var(--s);
+    font-family: var(--secondaire);
+    font-weight: normal;
+    width: min(13em, 20em);
+}
+.image, .erreur_titre_1 {
+    grid: 2 / 5;
+}
+
+.image {
+    position: relative;
+   
+    grid-column: 2/3;
+    left: min(-8rem, 5rem);
+    width: clamp(25rem, 1rem + 4vw, 28rem);
+    min-height: clamp(25rem, 2rem + 4vw, 28rem);
+}
+
+img {
+    opacity: 0;
+    position: relative;
+    left: 5em;
+    top: -3em;
+    width: clamp(14rem, 179%, 59rem);
+    object-fit: cover;
+    animation: imageFade 500ms ease-out forwards;
+    animation-delay: 500ms;
+}
+
+.message {
+    z-index: 5;
+}
+
+.contain-message {
+    width: min(13em, 20em);
+}
+
+.btn_page_error {
+    padding: 1.8em 1.7rem;
+    background: #7f4c4d;
+    border: none;
+    position: relative;
+    top: -13rem;
+    left: 3rem;
+}
+.btn_page_error a {
+    font-weight: 600;
+    font-size: 1rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-family: var(--secondaire);
+    animation: apparitionFade 1000ms ease forwards;
+}
+
+header{
+    position: fixed;
+    background-color: #222d3b;
+    z-index: 999;
+    width: 100%;
+    box-shadow: rgb(21 21 21 / 87%) 0px 59px 100px -8px;
+}
+
+.toggle {
+    display: none;
+}
+
+nav {
+    text-align: center;
+    text-align: left;
+    padding-top: 4em;
+    display: none;
+}
+
+ul li {
+    margin-bottom: 1em;
+    margin-left: 2em;
+    list-style: none;
+    text-transform: uppercase;
+    font-family: var(--secondaire);
+    color: aliceblue;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    margin-top: 1em;
+    margin-left: 1em;
+    
+}
+
+.toggle:checked ~ nav {
+    display: block;
+}
+
+.toggle:checked ~ .nav-toggle-label span {
+    color: aliceblue;
+} 
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background-color: #7f4c4d;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+}
+label span {
+    font-family: 'Sofia Pro';
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #222d3b;
+}
+
+h1 > span {
+    overflow: hidden;
+    display: block;
+}
+
+h1 > span > span {
+    display: block;
+    animation: spanFade 900ms ease forwards;
+    transform: translateY(100%);
+}
+
+h1 > span:nth-child(2) {
+    animation-delay: 200ms;
+}
+
+h1 > span:nth-child(3) {
+    animation-delay: 400ms;
+}
+
+h1 > span:nth-child(4) {
+    animation-delay: 500ms;
+    color: #7f4c4d;
+    font-weight: 900;
+}
+
+
+
+.erreur_text_2 > span {
+    overflow: hidden;
+    display: block;
+}
+
+.erreur_text_2 > span > span {
+    display: block;
+    animation: textFade 1000ms ease forwards;
+    transform: translateX(-100%);
+}
+.erreur_text_3 {
+    animation: apparitionFade 1000ms ease forwards;
+}
+
+
+/* Animation du texte */
+@keyframes spanFade {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+}
+
+@keyframes textFade {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+}
+
+@keyframes imageFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100%{
+        
+        transform: scale(1) 500ms ;
+        opacity: 1;
+    }
+
+}
+
+@keyframes apparitionFade {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
